@@ -1,92 +1,112 @@
-📊 Live Market Visibility Dashboard — Power BI
+# 📊 Live Market Visibility Dashboard — Power BI
 
-This project showcases a dynamic Power BI dashboard built to analyze Market Visibility, Retail Performance, and Lost Case Tracking across SPMs and TSMs.
+This project showcases a dynamic **Power BI dashboard** built to analyze **Market Visibility**, **Retail Performance**, and **Lost Case Tracking** across SPMs and TSMs.  
 It provides real-time insights for sales managers to identify performance gaps, monitor team productivity, and improve market capture efficiency.
 
-🚀 Project Highlights
+---
 
-📌 SPM & TSM Level Market Analysis
+## 🖼 Dashboard Preview
 
-🔄 Total Retail vs Lost Cases Comparison
+### **Main Dashboard Overview**
+![Dashboard](Dashboard.png)
 
-📈 Market Visibility % and Live Deal Visibility % KPIs
+---
 
-🏆 Top 4 & Bottom 4 TSM Rankings
+### **SPM → TSM Performance Table**
+![SPM TSM Table](table.png)
 
-🎛 Interactive slicers for Product Line, Month, State, and SPM
+---
 
-🎨 Conditional formatting to highlight performance levels
+### **Market Visibility Bar Chart**
+![Graph 1](Graph%201.png)
 
-🧩 Hierarchical SPM → TSM structure for detailed team performance
+---
 
-📌 Data Model Summary
+### **Top & Bottom TSM Performance**
+![Graph 2](Graph%202.png)
 
-The dataset used in the dashboard includes:
+---
 
-Actual TIV (Total Industry Volume)
+## 🚀 Project Highlights
 
-Total Retail
+- 📌 **SPM & TSM Level Market Analysis**  
+- 🔄 **Total Retail vs Lost Cases Comparison**  
+- 📈 **Market Visibility %** and **Live Deal Visibility %** KPIs  
+- 🏆 **Top 4 & Bottom 4 TSM Rankings**  
+- 🎛 **Interactive slicers**: Product Line, Month, State, SPM  
+- 🎨 **Conditional formatting** to highlight performance levels  
+- 🧩 **Hierarchical SPM → TSM breakdown**  
 
-Lost Cases
+---
 
-TSM / SPM Hierarchy
+## 📌 Data Model Summary
 
-Filters/Slicers: Product Line, Month, State, SPM
+The dataset includes:
 
-🧠 DAX Measures Used
+- **Actual TIV** (Total Industry Volume)  
+- **Total Retail**  
+- **Lost Cases**  
+- **TSM / SPM Hierarchy**  
+- **Filters/Slicers:** Product Line, Month, State, SPM  
 
-⭐ 1. Market Visibility
+---
+
+## 🧠 DAX Measures Used
+
+### ⭐ **1. Market Visibility**
+```DAX
 Market Visibility =
 DIVIDE(
     SUM(TIV[Total Retail]) + SUM(TIV[Lost Cases]),
     SUM(TIV[Actual Tiv])
 )
+```
 
-⭐ 2. Live Deal Visibility (LDV)
+---
+
+### ⭐ **2. Live Deal Visibility (LDV)**
+```DAX
 Live Deal Visibility =
 DIVIDE(
     SUM(TIV[Lost Cases]),
     SUM(TIV[Actual Tiv]) - SUM(TIV[Total Retail])
 )
+```
 
-🎨 Visuals Included
+---
 
-📊 SPM → TSM hierarchical matrix
+## 🎨 Visuals Included
 
-🌡 Conditional formatted bar chart (Green → Yellow → Red scale)
+- 📊 **SPM → TSM hierarchical matrix**  
+- 🌡 **Conditional formatted performance bar chart**  
+- 🏆 **Top 4 TSM performance panel**  
+- ⚠️ **Bottom 4 TSM performance panel**  
+- 🔷 KPI tiles for:
+  - Actual TIV  
+  - Total Retail  
+  - Lost Cases  
 
-🏅 Top 4 TSM performance panel
+---
 
-⚠️ Bottom 4 TSM performance panel
+## 🧭 Slicers Added
 
-🔷 KPI tiles for:
+- **Product Line**  
+- **Month**  
+- **State**  
+- **SPM**
 
-Actual TIV
+---
 
-Total Retail
+## 📊 Dashboard Insights
 
-Lost Cases
+- Provides detailed **SPM-wise & TSM-wise performance breakdown**.  
+- Identifies **Top-performing TSMs** using Market Visibility %.  
+- Highlights **Bottom performers** for improvement.  
+- Uses **color-coded bars (Green → Red)** for quick visual interpretation.  
+- Displays summary KPIs including:
+  - Total TIV  
+  - Total Retail  
+  - Lost Cases  
 
-🧭 Slicers Added
+---
 
-Product Line
-
-Month
-
-State
-
-SPM
-
-These slicers help users analyze market performance from different perspectives.
-
-📊 Dashboard Insights
-
-Provides a complete SPM-wise and TSM-wise breakdown of Actual TIV, Retail, Lost Cases, and KPIs.
-
-Helps identify Top-performing TSMs using the Market Visibility % metric.
-
-Highlights Bottom performers needing attention and corrective action.
-
-Uses color-coded visibility bars for quick performance interpretation.
-
-Includes summary KPI tiles to give a quick snapshot of Total TIV, Total Retail, and Lost Cases.
