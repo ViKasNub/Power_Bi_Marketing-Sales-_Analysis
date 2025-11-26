@@ -1,62 +1,92 @@
-📊 Live Market Visibility Dashboard (Power BI)
+📊 Live Market Visibility Dashboard — Power BI
 
-A fully interactive Power BI analytics dashboard designed to monitor Market Visibility, Retail Performance, and Live Deal Tracking across multiple Sales Personnel (SPM & TSM).
-This dashboard helps business teams measure real-time performance, identify gaps, and improve sales conversion efficiency.
+This project showcases a dynamic Power BI dashboard built to analyze Market Visibility, Retail Performance, and Lost Case Tracking across SPMs and TSMs.
+It provides real-time insights for sales managers to identify performance gaps, monitor team productivity, and improve market capture efficiency.
 
-🚀 Project Overview
+🚀 Project Highlights
 
-The Live Market Visibility Dashboard provides a consolidated view of:
+📌 SPM & TSM Level Market Analysis
+
+🔄 Total Retail vs Lost Cases Comparison
+
+📈 Market Visibility % and Live Deal Visibility % KPIs
+
+🏆 Top 4 & Bottom 4 TSM Rankings
+
+🎛 Interactive slicers for Product Line, Month, State, and SPM
+
+🎨 Conditional formatting to highlight performance levels
+
+🧩 Hierarchical SPM → TSM structure for detailed team performance
+
+📌 Data Model Summary
+
+The dataset used in the dashboard includes:
 
 Actual TIV (Total Industry Volume)
 
-Retail Performance
+Total Retail
 
-Lost Cases Analysis
+Lost Cases
 
-Market Visibility %
+TSM / SPM Hierarchy
 
-Live Deal Visibility %
+Filters/Slicers: Product Line, Month, State, SPM
 
-Top & Bottom Performing TSMs
+🧠 DAX Measures Used
 
-SPM-wise Sales Team Performance Breakdown
-
-This system helps sales managers understand how effectively their teams capture market opportunities and pinpoints improvement areas using meaningful KPIs.
-
-🧠 Key KPIs & Metrics
-⭐ Market Visibility (MV)
-
-Measures the team's overall capture of market opportunities.
-
+⭐ 1. Market Visibility
 Market Visibility =
 DIVIDE(
     SUM(TIV[Total Retail]) + SUM(TIV[Lost Cases]),
     SUM(TIV[Actual Tiv])
 )
 
-⭐ Live Deal Visibility (LDV)
-
-Shows how effectively current live deals are being tracked or closed.
-
+⭐ 2. Live Deal Visibility (LDV)
 Live Deal Visibility =
 DIVIDE(
     SUM(TIV[Lost Cases]),
     SUM(TIV[Actual Tiv]) - SUM(TIV[Total Retail])
 )
 
+🎨 Visuals Included
 
-🧩 Features
+📊 SPM → TSM hierarchical matrix
 
-🌐 SPM & TSM level visibility
+🌡 Conditional formatted bar chart (Green → Yellow → Red scale)
 
-🎯 Top 4 & Bottom 4 TSM performance
+🏅 Top 4 TSM performance panel
 
-📍 State-wise & month-wise slicers
+⚠️ Bottom 4 TSM performance panel
 
-🟩🟥 Color-coded performance bars
+🔷 KPI tiles for:
 
-📉 Gap analysis between Retail vs Lost Cases
+Actual TIV
 
-🔄 Dynamic DAX calculations for market insights
+Total Retail
 
-📈 Real-time decision support for sales managers
+Lost Cases
+
+🧭 Slicers Added
+
+Product Line
+
+Month
+
+State
+
+SPM
+
+These slicers help users analyze market performance from different perspectives.
+
+📊 Dashboard Insights
+
+Provides a complete SPM-wise and TSM-wise breakdown of Actual TIV, Retail, Lost Cases, and KPIs.
+
+Helps identify Top-performing TSMs using the Market Visibility % metric.
+
+Highlights Bottom performers needing attention and corrective action.
+
+Uses color-coded visibility bars for quick performance interpretation.
+
+Includes summary KPI tiles to give a quick snapshot of Total TIV, Total Retail, and Lost Cases.
